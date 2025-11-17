@@ -2,17 +2,27 @@
 
 import { SplineScene } from "@/components/ui/splite";
 import { Spotlight } from "@/components/ui/spotlight";
+import { Navigation } from "@/components/Navigation";
 import { useState, useEffect, useRef } from 'react';
 
 export default function SplineHero() {
   const titleWords = 'AI & Automation'.split(' ');
-  const subtitle = 'Professionell implementation av AI-lösningar för svenska företag. Från processautomation till intelligenta system som skapar verklig affärsnytta.';
+  const subtitle = 'Intelligenta AI-lösningar för svenska företag.';
   const [visibleWords, setVisibleWords] = useState(0);
   const [subtitleVisible, setSubtitleVisible] = useState(false);
+  const [navVisible, setNavVisible] = useState(false);
   const hasAnimatedRef = useRef(false);
 
   useEffect(() => {
     if (hasAnimatedRef.current) return; // Prevent re-animation
+
+    // Animate navigation first (immediately)
+    if (!navVisible) {
+      const timeout = setTimeout(() => {
+        setNavVisible(true);
+      }, 100);
+      return () => clearTimeout(timeout);
+    }
 
     if (visibleWords < titleWords.length) {
       const timeout = setTimeout(() => {
@@ -26,10 +36,25 @@ export default function SplineHero() {
       }, 600);
       return () => clearTimeout(timeout);
     }
-  }, [visibleWords, subtitleVisible, titleWords.length]);
+  }, [visibleWords, subtitleVisible, navVisible, titleWords.length]);
 
   return (
     <div className="w-full h-screen bg-black/[0.96] relative overflow-hidden">
+      <Navigation
+        logo={{ text: 'AI Solutions' }}
+        navigation={[
+          { name: 'Tjänster', href: '#services' },
+          { name: 'Möjligheter', href: '#capabilities' },
+          { name: 'Användningsfall', href: '#use-cases' },
+          { name: 'Teknologi', href: '#tech' },
+        ]}
+        loginText="Kontakta oss"
+        loginHref="#contact"
+        isDark={true}
+        isVisible={navVisible}
+        animationDelay="0s"
+      />
+
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"

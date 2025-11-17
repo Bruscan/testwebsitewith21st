@@ -29,7 +29,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section id="services" className="py-24 bg-black relative overflow-hidden">
       {/* Unified gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-neutral-950/30 to-transparent pointer-events-none"></div>
 

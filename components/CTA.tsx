@@ -1,6 +1,6 @@
 export default function CTA() {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section id="contact" className="py-24 bg-black relative overflow-hidden">
       {/* Subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neutral-950/10 to-black pointer-events-none"></div>
       <div className="max-w-5xl mx-auto px-6">
