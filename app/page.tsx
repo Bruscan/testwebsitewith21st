@@ -5,6 +5,7 @@ import UseCases from '@/components/UseCases';
 import Testimonials from '@/components/Testimonials';
 import TechStack from '@/components/TechStack';
 import CTA from '@/components/CTA';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Testimonials />
       <TechStack />
       <CTA />
+      <Footer />
     </main>
   );
 }

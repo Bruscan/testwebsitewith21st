@@ -2,7 +2,7 @@ export default function CTA() {
   return (
     <section id="contact" className="py-24 bg-black relative overflow-hidden">
       {/* Subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neutral-950/10 to-black pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neutral-950/10 to-transparent pointer-events-none"></div>
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
@@ -50,7 +50,7 @@ export default function CTA() {
         </div>
 
         {/* Quick Info */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto mb-16 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto text-center">
           <div>
             <div className="text-2xl font-bold text-neutral-50 mb-2">48h</div>
             <div className="text-sm text-neutral-400">Svarstid</div>
@@ -62,20 +62,6 @@ export default function CTA() {
           <div>
             <div className="text-2xl font-bold text-neutral-50 mb-2">Konfidentiellt</div>
             <div className="text-sm text-neutral-400">NDA vid behov</div>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <div className="pt-12">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
-            <div className="text-neutral-500">
-              © 2024 AI Solutions Sweden AB
-            </div>
-            <div className="flex gap-6">
-              <a href="#" className="text-neutral-500 hover:text-neutral-400 transition-colors">Integritet</a>
-              <a href="#" className="text-neutral-500 hover:text-neutral-400 transition-colors">Villkor</a>
-              <a href="#" className="text-neutral-500 hover:text-neutral-400 transition-colors">info@aisolutions.se</a>
-            </div>
           </div>
         </div>
       </div>
