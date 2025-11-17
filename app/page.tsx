@@ -1,5 +1,6 @@
 import SplineHero from '@/components/SplineHero';
 import Services from '@/components/Services';
+import SystemIntegration from '@/components/SystemIntegration';
 import Capabilities from '@/components/Capabilities';
 import UseCases from '@/components/UseCases';
 import Testimonials from '@/components/Testimonials';
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="min-h-screen">
       <SplineHero />
       <Services />
+      <SystemIntegration />
       <Capabilities />
       <UseCases />
       <Testimonials />
