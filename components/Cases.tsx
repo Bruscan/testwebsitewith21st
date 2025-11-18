@@ -5,20 +5,20 @@ export default function Cases() {
     {
       icon: Phone,
       title: "AI-röstagent för restaurang",
-      description: "Tar emot samtal, bokar bord, hanterar ändringar, svarar på frågor.",
-      details: "Full integration med schema & API."
+      description: "Tar emot samtal, bokar bord, hanterar ändringar och svarar på vanliga frågor – utan väntetid.",
+      details: "Integrerad med bokningssystem, öppettider och meny."
     },
     {
       icon: ShoppingCart,
       title: "E-handelsautomation",
-      description: "Bots som uppdaterar produktdata, lager, priser och flöden automatiskt.",
-      details: "Order → API → notifieringar → rapporter."
+      description: "Bots som uppdaterar produktdata, lager, priser och orderflöden automatiskt.",
+      details: "Mindre manuellt arbete, färre fel och alltid aktuella produktsidor."
     },
     {
       icon: MessageSquare,
       title: "AI-kundserviceagent",
-      description: "Automatiserar majoriteten av inkommande frågor i e-handel & tjänsteföretag.",
-      details: "24/7 tillgänglighet med konsekvent kvalitet."
+      description: "Automatiserar majoriteten av återkommande frågor i e-handel och tjänsteföretag.",
+      details: "Ger snabbare svar till kunder och avlastar supportteamet dygnet runt."
     }
   ];
 
@@ -33,6 +33,9 @@ export default function Cases() {
               Vad vi redan har byggt
             </span>
           </h2>
+          <p className="text-lg text-neutral-300 max-w-4xl mx-auto">
+            Ett urval av lösningar vi utvecklat i verkliga verksamheter.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
