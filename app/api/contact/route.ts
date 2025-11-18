@@ -144,13 +144,71 @@ ${message}
       </html>
     `;
 
-    // Send email using Resend
-    const data = await resend.emails.send({
-      from: 'Kontaktformulär <noreply@bataksolutions.se>',
-      to: process.env.CONTACT_EMAIL || 'kontakt@bataksolutions.se',
-      subject: `Ny förfrågan från ${name}${company ? ` - ${company}` : ''}`,
-      html: emailHtml,
-      text: `
+    // Simple confirmation email template for the sender
+    const confirmationHtml = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 40px 20px;">
+            <tr>
+              <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+                  <!-- Header -->
+                  <tr>
+                    <td style="padding: 40px 40px 30px; text-align: center; background-color: #ffffff;">
+                      <h1 style="margin: 0; color: #1a1a1a; font-size: 24px; font-weight: 600;">
+                        Batak Solutions
+                      </h1>
+                    </td>
+                  </tr>
+
+                  <!-- Content -->
+                  <tr>
+                    <td style="padding: 0 40px 40px; color: #333333; font-size: 16px; line-height: 1.6;">
+                      <p style="margin: 0 0 16px;">Hej ${name.split(' ')[0]},</p>
+
+                      <p style="margin: 0 0 16px;">Tack för att du kontaktar oss. Vi har tagit emot din förfrågan och återkommer till dig inom <strong>48 timmar</strong>.</p>
+
+                      <p style="margin: 0 0 16px;">Vi ser fram emot att diskutera hur vi kan hjälpa er organisation med AI och automation.</p>
+
+                      <p style="margin: 0;">Med vänliga hälsningar,<br><strong>Batak Solutions</strong></p>
+                    </td>
+                  </tr>
+
+                  <!-- Footer -->
+                  <tr>
+                    <td style="padding: 30px 40px; text-align: center; background-color: #f9f9f9; border-top: 1px solid #e5e5e5;">
+                      <p style="margin: 0 0 8px; color: #666666; font-size: 14px;">
+                        <a href="https://bataksolutions.se" style="color: #356fd9; text-decoration: none;">bataksolutions.se</a>
+                      </p>
+                      <p style="margin: 0; color: #999999; font-size: 12px;">
+                        © 2024 Batak Solutions AB
+                      </p>
+                    </td>
+                  </tr>
+
+                </table>
+              </td>
+            </tr>
+          </table>
+        </body>
+      </html>
+    `;
+
+    // Send both emails using batch
+    const data = await resend.batch.send([
+      // 1. Notification email to company
+      {
+        from: 'Kontaktformulär <noreply@bataksolutions.se>',
+        to: process.env.CONTACT_EMAIL || 'kontakt@bataksolutions.se',
+        subject: `Ny förfrågan från ${name}${company ? ` - ${company}` : ''}`,
+        html: emailHtml,
+        text: `
 Ny kontaktförfrågan från webbplatsen
 
 Namn: ${name}
@@ -162,8 +220,30 @@ ${message}
 
 ---
 Detta meddelande skickades från bataksolutions.se
-      `.trim(),
-    });
+        `.trim(),
+      },
+      // 2. Confirmation email to sender
+      {
+        from: 'Batak Solutions <noreply@bataksolutions.se>',
+        to: email,
+        subject: 'Tack för din förfrågan - Batak Solutions',
+        html: confirmationHtml,
+        text: `
+Hej ${name.split(' ')[0]},
+
+Tack för att du kontaktar oss. Vi har tagit emot din förfrågan och återkommer till dig inom 48 timmar.
+
+Vi ser fram emot att diskutera hur vi kan hjälpa er organisation med AI och automation.
+
+Med vänliga hälsningar,
+Batak Solutions
+
+---
+bataksolutions.se
+© 2024 Batak Solutions AB
+        `.trim(),
+      },
+    ]);
 
     return NextResponse.json({ success: true, data });
   } catch (error) {
