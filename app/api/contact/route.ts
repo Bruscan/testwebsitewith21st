@@ -132,7 +132,7 @@ ${message}
                         </a>
                       </p>
                       <p style="margin: 16px 0 0; color: #525252; font-size: 12px;">
-                        © 2024 Batak Solutions AB
+                        © 2025 Batak Solutions AB
                       </p>
                     </td>
                   </tr>
@@ -144,51 +144,47 @@ ${message}
       </html>
     `;
 
-    // Simple confirmation email template for the sender
+    // Confirmation email template for the sender
     const confirmationHtml = `
       <!DOCTYPE html>
-      <html>
+      <html lang="sv">
         <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta charset="UTF-8" />
+          <title>Tack för din förfrågan</title>
         </head>
-        <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
-          <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 40px 20px;">
+        <body style="margin:0; padding:0; background-color:#f4f4f4;">
+          <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
             <tr>
-              <td align="center">
-                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <td align="center" style="padding:20px 0;">
+                <table cellpadding="0" cellspacing="0" width="600" style="background-color:#ffffff; border-radius:8px; overflow:hidden; font-family:Arial, sans-serif;">
 
                   <!-- Header -->
                   <tr>
-                    <td style="padding: 40px 40px 30px; text-align: center; background-color: #ffffff;">
-                      <h1 style="margin: 0; color: #1a1a1a; font-size: 24px; font-weight: 600;">
-                        Batak Solutions
-                      </h1>
+                    <td style="background-color:#111827; padding:16px 24px; color:#ffffff; font-size:20px; font-weight:bold;">
+                      Batak Solutions
                     </td>
                   </tr>
 
-                  <!-- Content -->
+                  <!-- Body -->
                   <tr>
-                    <td style="padding: 0 40px 40px; color: #333333; font-size: 16px; line-height: 1.6;">
-                      <p style="margin: 0 0 16px;">Hej ${name.split(' ')[0]},</p>
-
-                      <p style="margin: 0 0 16px;">Tack för att du kontaktar oss. Vi har tagit emot din förfrågan och återkommer till dig inom <strong>48 timmar</strong>.</p>
-
-                      <p style="margin: 0 0 16px;">Vi ser fram emot att diskutera hur vi kan hjälpa er organisation med AI och automation.</p>
-
-                      <p style="margin: 0;">Med vänliga hälsningar,<br><strong>Batak Solutions</strong></p>
+                    <td style="padding:24px; color:#111827; font-size:15px; line-height:1.6;">
+                      <p>Hej ${name.split(' ')[0]},</p>
+                      <p>
+                        Tack för att du kontaktar oss! Vi har tagit emot din förfrågan och
+                        <strong>återkommer till dig inom 48 timmar</strong>.
+                      </p>
+                      <p style="margin-top:16px;">
+                        Vänliga hälsningar,<br/>
+                        Batak Solutions AB<br/>
+                        <a href="https://bataksolutions.se" style="color:#2563eb; text-decoration:none;">bataksolutions.se</a>
+                      </p>
                     </td>
                   </tr>
 
                   <!-- Footer -->
                   <tr>
-                    <td style="padding: 30px 40px; text-align: center; background-color: #f9f9f9; border-top: 1px solid #e5e5e5;">
-                      <p style="margin: 0 0 8px; color: #666666; font-size: 14px;">
-                        <a href="https://bataksolutions.se" style="color: #356fd9; text-decoration: none;">bataksolutions.se</a>
-                      </p>
-                      <p style="margin: 0; color: #999999; font-size: 12px;">
-                        © 2024 Batak Solutions AB
-                      </p>
+                    <td style="background-color:#f3f4f6; padding:12px 24px; font-size:12px; color:#6b7280;">
+                      Detta är ett automatiskt svar – du behöver inte svara på detta mejl.
                     </td>
                   </tr>
 
@@ -231,16 +227,14 @@ Detta meddelande skickades från bataksolutions.se
         text: `
 Hej ${name.split(' ')[0]},
 
-Tack för att du kontaktar oss. Vi har tagit emot din förfrågan och återkommer till dig inom 48 timmar.
+Tack för att du kontaktar oss! Vi har tagit emot din förfrågan och återkommer till dig inom 48 timmar.
 
-Vi ser fram emot att diskutera hur vi kan hjälpa er organisation med AI och automation.
-
-Med vänliga hälsningar,
-Batak Solutions
+Vänliga hälsningar,
+Batak Solutions AB
+bataksolutions.se
 
 ---
-bataksolutions.se
-© 2024 Batak Solutions AB
+Detta är ett automatiskt svar – du behöver inte svara på detta mejl.
         `.trim(),
       },
     ]);

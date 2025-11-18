@@ -22,14 +22,13 @@ interface NavigationProps {
 }
 
 const defaultNavigation: NavigationItem[] = [
-  { name: 'Tjänster', href: '#services' },
-  { name: 'Lösningar', href: '#solutions' },
-  { name: 'Teknologi', href: '#tech' },
+  { name: 'Hem', href: '#' },
+  { name: 'Integration', href: '#integration' },
   { name: 'Kontakt', href: '#contact' },
 ]
 
 export function Navigation({
-  logo = { text: 'AI Solutions' },
+  logo = { text: 'Batak Solutions' },
   navigation = defaultNavigation,
   loginText = 'Kontakta oss',
   loginHref = '#contact',

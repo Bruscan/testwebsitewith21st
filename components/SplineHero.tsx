@@ -41,12 +41,11 @@ export default function SplineHero() {
   return (
     <div className="w-full h-screen bg-black/[0.96] relative overflow-hidden">
       <Navigation
-        logo={{ text: 'AI Solutions' }}
+        logo={{ text: 'Batak Solutions' }}
         navigation={[
-          { name: 'Tjänster', href: '#services' },
-          { name: 'Möjligheter', href: '#capabilities' },
-          { name: 'Användningsfall', href: '#use-cases' },
-          { name: 'Teknologi', href: '#tech' },
+          { name: 'Hem', href: '#' },
+          { name: 'Integration', href: '#integration' },
+          { name: 'Kontakt', href: '#contact' },
         ]}
         loginText="Kontakta oss"
         loginHref="#contact"
@@ -108,9 +107,9 @@ export default function SplineHero() {
           <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${
             subtitleVisible ? 'fade-in-subtitle' : ''
           }`} style={{ animationDelay: '0.3s', opacity: subtitleVisible ? undefined : 0 }}>
-            <button className="px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-neutral-200 transition-all hover:scale-105 shadow-2xl pointer-events-auto">
+            <a href="#contact" className="px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-neutral-200 transition-all hover:scale-105 shadow-2xl pointer-events-auto">
               Boka gratis konsultation
-            </button>
+            </a>
             <button
               className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-bold text-lg hover:bg-white/20 transition-all border border-white/30 pointer-events-auto"
               onClick={() => {

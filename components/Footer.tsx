@@ -2,43 +2,19 @@
 
 import * as React from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Facebook, Instagram, Linkedin, Send, Twitter } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-neutral-800 bg-black text-white">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Newsletter Section */}
-          <div className="relative">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">Håll dig uppdaterad</h2>
-            <p className="mb-6 text-neutral-400">
-              Prenumerera på vårt nyhetsbrev för de senaste uppdateringarna om AI-lösningar.
-            </p>
-            <form className="relative">
-              <Input
-                type="email"
-                placeholder="Din e-postadress"
-                className="pr-12 bg-neutral-900 border-neutral-800 text-white placeholder:text-neutral-500"
-              />
-              <Button
-                type="submit"
-                size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-white text-black hover:bg-neutral-200 transition-transform hover:scale-105"
-              >
-                <Send className="h-4 w-4" />
-                <span className="sr-only">Prenumerera</span>
-              </Button>
-            </form>
-          </div>
-
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {/* Quick Links */}
           <div>
             <h3 className="mb-4 text-lg font-semibold">Snabblänkar</h3>
@@ -46,14 +22,8 @@ export default function Footer() {
               <a href="#" className="block text-neutral-400 transition-colors hover:text-white">
                 Hem
               </a>
-              <a href="#services" className="block text-neutral-400 transition-colors hover:text-white">
-                Tjänster
-              </a>
-              <a href="#capabilities" className="block text-neutral-400 transition-colors hover:text-white">
-                Möjligheter
-              </a>
-              <a href="#use-cases" className="block text-neutral-400 transition-colors hover:text-white">
-                Kundcase
+              <a href="#integration" className="block text-neutral-400 transition-colors hover:text-white">
+                Integration
               </a>
               <a href="#contact" className="block text-neutral-400 transition-colors hover:text-white">
                 Kontakt
@@ -153,19 +123,11 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-neutral-800 pt-8 text-center md:flex-row">
           <p className="text-sm text-neutral-400">
-            © 2024 Batak Solutions AB. Alla rättigheter förbehållna.
+            © 2025 Batak Solutions AB. Alla rättigheter förbehållna.
           </p>
-          <nav className="flex gap-4 text-sm">
-            <a href="#" className="text-neutral-400 transition-colors hover:text-white">
-              Integritetspolicy
-            </a>
-            <a href="#" className="text-neutral-400 transition-colors hover:text-white">
-              Användarvillkor
-            </a>
-            <a href="#" className="text-neutral-400 transition-colors hover:text-white">
-              Cookie-inställningar
-            </a>
-          </nav>
+          <a href="/integritetspolicy" className="text-sm text-neutral-400 transition-colors hover:text-white">
+            Integritetspolicy
+          </a>
         </div>
       </div>
     </footer>
