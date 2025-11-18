@@ -29,7 +29,7 @@ export default function UseCases() {
   ];
 
   return (
-    <section id="use-cases" className="py-24 bg-black relative overflow-hidden">
+    <section id="use-cases" className="py-24 bg-gradient-to-b from-black via-neutral-950 to-black relative overflow-hidden">
       {/* Subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neutral-950/20 to-transparent pointer-events-none"></div>
       <div className="max-w-7xl mx-auto px-6">

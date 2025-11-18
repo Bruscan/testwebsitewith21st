@@ -1,10 +1,7 @@
 import SplineHero from '@/components/SplineHero';
-import Services from '@/components/Services';
 import SystemIntegration from '@/components/SystemIntegration';
-import Capabilities from '@/components/Capabilities';
-import UseCases from '@/components/UseCases';
-import Testimonials from '@/components/Testimonials';
-import TechStack from '@/components/TechStack';
+import AppShowcase from '@/components/AppShowcase';
+import TrueFormSection from '@/components/TrueFormSection';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 
@@ -12,12 +9,9 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <SplineHero />
-      <Services />
+      <AppShowcase />
+      <TrueFormSection />
       <SystemIntegration />
-      <Capabilities />
-      <UseCases />
-      <Testimonials />
-      <TechStack />
       <CTA />
       <Footer />
     </main>

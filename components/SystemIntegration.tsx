@@ -3,9 +3,9 @@ import { CheckCircle2 } from 'lucide-react';
 
 export default function SystemIntegration() {
   return (
-    <section id="integration" className="py-24 bg-black relative overflow-hidden">
-      {/* Subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neutral-950/10 to-transparent pointer-events-none"></div>
+    <section id="integration" className="py-24 bg-gradient-to-b from-black via-neutral-950 to-black relative overflow-hidden">
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
