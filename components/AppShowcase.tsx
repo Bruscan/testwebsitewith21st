@@ -42,10 +42,6 @@ export default function AppShowcase() {
 
         {/* Scrolling App Icons */}
         <div className="relative py-12">
-          {/* Gradient overlays for fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
-
           {/* Scrolling container */}
           <div className="overflow-x-hidden">
             <div className="flex gap-6 animate-scroll py-4">

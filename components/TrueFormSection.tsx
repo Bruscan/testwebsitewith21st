@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Star } from 'lucide-react';
 
 export default function TrueFormSection() {
   return (
@@ -23,6 +24,21 @@ export default function TrueFormSection() {
             <p className="text-xl text-neutral-300">
               Din personliga AI träningsassistent
             </p>
+
+            {/* Star Rating */}
+            <div className="flex items-center gap-3 -mt-2">
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star
+                    key={star}
+                    className={`w-5 h-5 ${star <= 4 ? 'fill-yellow-400 text-yellow-400' : 'fill-yellow-400 text-yellow-400'}`}
+                    style={star === 5 ? { clipPath: 'inset(0 10% 0 0)' } : {}}
+                  />
+                ))}
+              </div>
+              <span className="text-lg font-semibold text-neutral-200">4.9</span>
+              <span className="text-sm text-neutral-500">(App Store)</span>
+            </div>
 
             <div className="space-y-4 text-lg text-neutral-400">
               <p>
