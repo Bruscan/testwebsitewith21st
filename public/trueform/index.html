@@ -477,9 +477,9 @@
         </p>
 
         <div class="cta-buttons">
-            <button onclick="window.location.href='https://apps.apple.com/se/app/trueform-ai-body-scanner/id6745799401'" class="app-store-btn">
+            <a href="https://apps.apple.com/se/app/trueform-ai-body-scanner/id6745799401" target="_blank" rel="noopener noreferrer" class="app-store-btn">
                 <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-            </button>
+            </a>
             <div class="rating">
                 <span class="stars">★★★★★</span>
                 <span>Loved by thousands</span>
@@ -612,10 +612,35 @@
     <section class="final-cta">
         <h2>Ready to Transform?</h2>
         <p>Download TrueForm AI and start your journey today.</p>
-        <button onclick="window.location.href='https://apps.apple.com/se/app/trueform-ai-body-scanner/id6745799401'" class="app-store-btn">
+        <a href="https://apps.apple.com/se/app/trueform-ai-body-scanner/id6745799401" target="_blank" rel="noopener noreferrer" class="app-store-btn">
             <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-        </button>
+        </a>
     </section>
+
+    <script>
+        // Handle App Store links for in-app browsers (TikTok, Instagram, etc.)
+        document.querySelectorAll('.app-store-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var appId = '6745799401';
+                var appStoreUrl = 'https://apps.apple.com/se/app/trueform-ai-body-scanner/id' + appId;
+                var itunesUrl = 'itms-apps://itunes.apple.com/app/id' + appId;
+
+                // Detect if iOS
+                var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+                if (isIOS) {
+                    // Try direct App Store scheme first
+                    window.location.href = itunesUrl;
+                } else {
+                    // For non-iOS, open web URL
+                    window.open(appStoreUrl, '_blank') || (window.location.href = appStoreUrl);
+                }
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <footer>
