@@ -431,7 +431,7 @@ export default function TrueFormPage() {
 
           <div className="cta-buttons">
             <img
-              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              src="/trueform/images/app-store-badge.svg"
               alt="Download on the App Store"
               className="app-store-btn"
               onClick={handleAppStoreClick}
@@ -570,7 +570,7 @@ export default function TrueFormPage() {
           <h2>Ready to Transform?</h2>
           <p>Download TrueForm AI and start your journey today.</p>
           <img
-            src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+            src="/trueform/images/app-store-badge.svg"
             alt="Download on the App Store"
             className="app-store-btn"
             onClick={handleAppStoreClick}
