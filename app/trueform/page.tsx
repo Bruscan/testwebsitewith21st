@@ -50,8 +50,10 @@ export default function TrueFormPage() {
             left: 50%;
             transform: translate(-50%, -50%);
             width: auto;
-            height: 95%;
-            max-height: 900px;
+            height: auto;
+            max-height: 85vh;
+            max-width: 90vw;
+            object-fit: contain;
             opacity: 0.35;
             pointer-events: none;
             z-index: 0;
