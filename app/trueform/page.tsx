@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 export default function TrueFormPage() {
   const handleAppStoreClick = async () => {
-    window.open('https://apps.apple.com/app/apple-store/id6745799401?ct=web&mt=8', '_blank');
+    window.location.href = 'https://apps.apple.com/app/apple-store/id6745799401?ct=web&mt=8';
   };
 
   return (
